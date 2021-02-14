@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <title>Trump or Dril</title>
+    <link rel="stylesheet" type="text/css" href="index.css" media="screen" />
+    <script>
+      const TRUMP = 1
+      const DRIL = 2
+      const ANSWERS = [TRUMP, DRIL, TRUMP, DRIL, TRUMP, DRIL, TRUMP]
+
+      function nextQuestion(current_question) {
+        var quiz_area = document.getElementById('quiz');
+        quiz_area.style.marginLeft = ((current_question+1)*-100) + "%";
+      }
+
+      function guess(current_question, user_guess) {
+        var str = " this tweet was made by ";
+        if (ANSWERS[current_question] == TRUMP) {
+          str += "@realDonaldTrump";
+        } else {
+          str += "@dril";
+        }
+
+        if (ANSWERS[current_question] == user_guess) {
+          str = "Correct! " + str;
+        } else {
+          str = "Nope! " + str;
+        }
+
+        var questionElem = document.getElementById("" + current_question);
+        
+        //Remove Trump/Dril Buttons
+        questionElem.lastElementChild.remove();
+        questionElem.lastElementChild.remove();
+
+        questionElem.firstElementChild.textContent = str;
+
+        var cont = document.createElement("button");
+        cont.textContent = "Continue";
+        cont.onclick = () => nextQuestion(current_question);
+
+        if (current_question != ANSWERS.length - 1) {
+          questionElem.appendChild(cont);
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Can you differentiate between @realDonaldTrump and @dril?</h1>
+    </header>
+    <div id="quiz">
+      <div class="question">
+        <div class="question-content" id="0">
+          <p>Who made this tweet?</p>
+          <p>Tweet #1</p>
+          <button onclick="guess(0, TRUMP)">Trump</button>
+          <button onclick="guess(0, DRIL)">Dril</button>
+        </div>
+      </div>
+      <div class="question">
+        <div class="question-content" id="1">
+          <p id="1p">Who made this tweet?</p>
+          <p>Tweet #2</p>
+          <button onclick="guess(1, TRUMP)">Trump</button>
+          <button onclick="guess(1, DRIL)">Dril</button>
+        </div>
+      </div>
+      <div class="question">
+        <div class="question-content" id="2">
+          <p>Who made this tweet?</p>
+          <p>Tweet #3</p>
+          <button onclick="guess(2, TRUMP)">Trump</button>
+          <button onclick="guess(2, DRIL)">Dril</button>
+        </div>
+      </div>
+      <div class="question">
+        <div class="question-content" id="3">
+          <p>Who made this tweet?</p>
+          <p>Tweet #4</p>
+          <button onclick="guess(3, TRUMP)">Trump</button>
+          <button onclick="guess(3, DRIL)">Dril</button>
+        </div>
+      </div>
+      <div class="question">
+        <div class="question-content" id="4">
+          <p>Who made this tweet?</p>
+          <p>Tweet #5</p>
+          <button onclick="guess(4, TRUMP)">Trump</button>
+          <button onclick="guess(4, DRIL)">Dril</button>
+        </div>
+      </div>
+      <div class="question">
+        <div class="question-content" id="5">
+          <p>Who made this tweet?</p>
+          <p>Tweet #6</p>
+          <button onclick="guess(5, TRUMP)">Trump</button>
+          <button onclick="guess(5, DRIL)">Dril</button>
+        </div>
+      </div>
+      <div class="question">
+        <div class="question-content" id="6">
+          <p>Who made this tweet?</p>
+          <p>Tweet #7</p>
+          <button onclick="guess(6, TRUMP)">Trump</button>
+          <button onclick="guess(6, DRIL)">Dril</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
