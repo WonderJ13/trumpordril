@@ -65,3 +65,18 @@ button {
   font-size: 2em;
   height: 10%;
 }
+
+/*Desktop Settings Here*/
+@media only screen and (min-width: 769px) {
+  .prompt {
+    font-size: 3em;
+  }
+
+  .tweet {
+    font-size: 3em;
+  }
+
+  button {
+    font-size: 3em;
+  }
+}
