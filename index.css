@@ -1,6 +1,8 @@
 html, body {
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -11,22 +13,17 @@ body {
 }
 
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-
-  text-align: center;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   background-color: #4da2f2;
 }
 
-header > h1 {
-  text-align: center;
-}
-
 #quiz {
-  height: 100%;
+  height: 80%;
   width: 700%;
   display: flex;
   flex-direction: row;
@@ -35,19 +32,11 @@ header > h1 {
 }
 
 .question {
-  position: relative;
   width: 100%;
+  height: 100%;
 }
 
 .question-content {
-  margin: 0;
-  position: absolute;
-  margin: auto;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-
   text-align: center;
 }
 
@@ -68,6 +57,10 @@ button {
 
 /*Desktop Settings Here*/
 @media only screen and (min-width: 769px) {
+  header > h1 {
+    font-size: 5em;
+  }
+
   .prompt {
     font-size: 3em;
   }
