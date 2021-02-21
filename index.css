@@ -56,7 +56,7 @@ button {
 }
 
 /*Desktop Settings Here*/
-@media only screen and (min-width: 769px) {
+@media (pointer: fine) {
   header > h1 {
     font-size: 5em;
   }
