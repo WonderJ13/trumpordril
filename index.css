@@ -24,7 +24,7 @@ header {
 
 #quiz {
   height: 80%;
-  width: 700%;
+  width: 800%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -50,9 +50,13 @@ header {
   height: 70%;
 }
 
+.buttons {
+  height: 30%;
+}
+
 button {
   font-size: 2em;
-  height: 10%;
+  width: 8em;
 }
 
 /*Desktop Settings Here*/
