@@ -23,7 +23,7 @@ header {
 }
 
 #quiz {
-  height: 80%;
+  height: 90%;
   width: 800%;
   display: flex;
   flex-direction: row;
@@ -42,15 +42,18 @@ header {
 
 .prompt {
   font-size: 1.5em;
-  height: 10%;
+  margin: 0;
+  height: 20%;
 }
 
 .tweet {
   font-size: 2em;
-  height: 70%;
+  margin: 0;
+  height: 50%;
 }
 
 .buttons {
+  margin: 0;
   height: 30%;
 }
 
