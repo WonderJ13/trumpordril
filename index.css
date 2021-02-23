@@ -22,6 +22,11 @@ header {
   background-color: #4da2f2;
 }
 
+header > h1 {
+  /*Magic values, I don't understand*/
+  font-size: calc(2vh + 2vw + 4vmin);
+}
+
 #quiz {
   height: 90%;
   width: 800%;
@@ -44,12 +49,18 @@ header {
   font-size: 1.5em;
   margin: 0;
   height: 20%;
+
+  /*Magic values, I don't understand*/
+  font-size: calc(2vh + 1.75vw + 1.25vmin);
 }
 
 .tweet {
   font-size: 2em;
   margin: 0;
   height: 50%;
+
+  /*Magic values, I don't understand*/
+  font-size: calc(2vh + 2vw + 2vmin);
 }
 
 .buttons {
@@ -58,25 +69,6 @@ header {
 }
 
 button {
-  font-size: 2em;
+  font-size: 5vh;
   width: 8em;
-}
-
-/*Desktop Settings Here*/
-@media (pointer: fine) {
-  header > h1 {
-    font-size: 5em;
-  }
-
-  .prompt {
-    font-size: 3em;
-  }
-
-  .tweet {
-    font-size: 3em;
-  }
-
-  button {
-    font-size: 3em;
-  }
 }
