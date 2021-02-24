@@ -24,7 +24,12 @@ header {
 
 header > h1 {
   /*Magic values, I don't understand*/
-  font-size: calc(2vh + 2vw + 4vmin);
+  font-size: calc(2vh + 2vw + 2vmin);
+}
+
+header > img {
+  width: auto;
+  height: 100%;
 }
 
 #quiz {
