@@ -9,7 +9,7 @@ body {
   position: fixed;
   overflow: hidden;
 
-  background-color: #0066d3;
+  background-color: #00d0ff;
 }
 
 header {
@@ -19,7 +19,7 @@ header {
   justify-content: center;
   align-items: center;
 
-  background-color: #4da2f2;
+  background-color: #00ffae;
 }
 
 header > h1 {
