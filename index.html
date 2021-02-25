@@ -4,16 +4,57 @@
     <link rel="stylesheet" type="text/css" href="index.css" media="screen" />
     <meta name="viewport" content="width=device-width" />
     <script>
-      const TRUMP = 1
-      const DRIL = 2
-      const ANSWERS = [TRUMP, DRIL, TRUMP, DRIL, TRUMP, DRIL, TRUMP]
+      const NIL = 0;
+      const TRUMP = 1;
+      const DRIL = 2;
+      const ANSWERS = [TRUMP, DRIL, TRUMP, DRIL, TRUMP, DRIL, TRUMP];
+      const GUESSES = [NIL, NIL, NIL, NIL, NIL, NIL, NIL];
 
       function nextQuestion(current_question) {
         var quiz_area = document.getElementById('quiz');
         quiz_area.style.marginLeft = ((current_question+1)*-100) + "%";
       }
 
+      function getScore() {
+        var score = 0;
+        for (var i = 0; i < ANSWERS.length; i++) {
+          if (ANSWERS[i] == GUESSES[i]) {
+            score += 1;
+          }
+        }
+        return score;
+      }
+
+      function updateScore() {
+        var score = getScore();
+        var scoreTracker = document.getElementById("score");
+        var scoreMessage = document.getElementById("score-message");
+
+        scoreTracker.textContent = "You scored " + score + "/" + ANSWERS.length + " questions correct!";
+
+        switch(score) {
+          case 0:
+            scoreMessage.textContent = "Wow... that's just impressive.";
+            break;
+          case 1:
+            scoreMessage.textContent = "Sample Text 1";
+            break;
+          case 2:
+            scoreMessage.textContent = "Sample Text 2";
+            break;
+          case 3:
+            scoreMessage.textContent = "Sample Text 3";
+            break;
+          default:
+            scoreMessage.textContent = "Sample Text 4";
+        }
+      }
+
       function guess(current_question, user_guess) {
+        //Record Answer
+        GUESSES[current_question-1] = user_guess;
+        updateScore();
+
         var str = " this tweet was made by ";
         if (ANSWERS[current_question-1] == TRUMP) {
           str += "@realDonaldTrump";
@@ -39,10 +80,11 @@
         var cont = document.createElement("button");
         cont.textContent = "Continue";
         cont.onclick = () => nextQuestion(current_question);
-
-        if (current_question != ANSWERS.length) {
-          buttonElem.appendChild(cont);
+        
+        if (current_question == ANSWERS.length) {
+          cont.textContent = "See Results";
         }
+        buttonElem.appendChild(cont);
       }
     </script>
   </head>
@@ -132,6 +174,15 @@
             <button onclick="guess(7, TRUMP)">Trump</button>
             <button onclick="guess(7, DRIL)">Dril</button>
           </div>
+        </div>
+      </div>
+      <div class="question">
+        <div class="question-content" id="end">
+          <p class="prompt" id="score"></p>
+          <p class="tweet" id="score-message"></p>
+          <div class="buttons">
+            <p>Made with &#x1f49c; by <a href="https://twitter.com/WonderJ13">@WonderJ13</a></p>
+          </p>
         </div>
       </div>
     </div>
