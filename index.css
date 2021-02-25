@@ -73,6 +73,10 @@ header > img {
   height: 30%;
 }
 
+.continue {
+  display: none;
+}
+
 button {
   font-size: 5vh;
   width: 8em;

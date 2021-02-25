@@ -69,22 +69,12 @@
         }
 
         var questionElem = document.getElementById("" + current_question);
-        var buttonElem = document.getElementById(current_question + "-buttons");
+        var guessButtonElem = document.getElementById(current_question + "-guess-buttons");
+        var contButtonElem = document.getElementById(current_question + "-continue-button");
 
         questionElem.firstElementChild.textContent = str;
-
-        //Remove Trump/Dril Buttons
-        buttonElem.lastElementChild.remove();
-        buttonElem.lastElementChild.remove();
-
-        var cont = document.createElement("button");
-        cont.textContent = "Continue";
-        cont.onclick = () => nextQuestion(current_question);
-        
-        if (current_question == ANSWERS.length) {
-          cont.textContent = "See Results";
-        }
-        buttonElem.appendChild(cont);
+        guessButtonElem.style.display = "none";
+        contButtonElem.style.display = "initial";
       }
     </script>
   </head>
@@ -101,7 +91,7 @@
         <div class="question-content" id="0">
           <p class="prompt">Can you differentiate between @realDonaldTrump and @dril Tweets?</p>
           <p class="tweet">Click start to start the test!</p>
-          <div class="buttons" id="0-buttons">
+          <div class="buttons">
             <button onclick="nextQuestion(0)">Start</button>
           </div>
         </div>
@@ -110,9 +100,14 @@
         <div class="question-content" id="1">
           <p class="prompt">Who made this tweet?</p>
           <p class="tweet">My twitter has become so powerful, that I can actually make my enemies tell the truth.</p>
-          <div class="buttons" id="1-buttons">
-            <button onclick="guess(1, TRUMP)">Trump</button>
-            <button onclick="guess(1, DRIL)">Dril</button>
+          <div class="buttons">
+            <div id="1-guess-buttons">
+              <button onclick="guess(1, TRUMP)">Trump</button>
+              <button onclick="guess(1, DRIL)">Dril</button>
+            </div>
+            <div class="continue" id="1-continue-button">
+              <button onclick="nextQuestion(1)">Continue</button>
+            </div>
           </div>
         </div>
       </div>
@@ -120,9 +115,14 @@
         <div class="question-content" id="2">
           <p class="prompt">Who made this tweet?</p>
           <p class="tweet">Tweet #2</p>
-          <div class="buttons" id="2-buttons">
-            <button onclick="guess(2, TRUMP)">Trump</button>
-            <button onclick="guess(2, DRIL)">Dril</button>
+          <div class="buttons">
+            <div id="2-guess-buttons">
+              <button onclick="guess(2, TRUMP)">Trump</button>
+              <button onclick="guess(2, DRIL)">Dril</button>
+            </div>
+            <div class="continue" id="2-continue-button">
+              <button onclick="nextQuestion(2)">Continue</button>
+            </div>
           </div>
         </div>
       </div>
@@ -130,9 +130,14 @@
         <div class="question-content" id="3">
           <p class="prompt">Who made this tweet?</p>
           <p class="tweet">Tweet #3</p>
-          <div class="buttons" id="3-buttons">
-            <button onclick="guess(3, TRUMP)">Trump</button>
-            <button onclick="guess(3, DRIL)">Dril</button>
+          <div class="buttons">
+            <div id="3-guess-buttons">
+              <button onclick="guess(3, TRUMP)">Trump</button>
+              <button onclick="guess(3, DRIL)">Dril</button>
+            </div>
+            <div class="continue" id="3-continue-button">
+              <button onclick="nextQuestion(3)">Continue</button>
+            </div>
           </div>
         </div>
       </div>
@@ -140,9 +145,14 @@
         <div class="question-content" id="4">
           <p class="prompt">Who made this tweet?</p>
           <p class="tweet">Tweet #4</p>
-          <div class="buttons" id="4-buttons">
-            <button onclick="guess(4, TRUMP)">Trump</button>
-            <button onclick="guess(4, DRIL)">Dril</button>
+          <div class="buttons">
+            <div id="4-guess-buttons">
+              <button onclick="guess(4, TRUMP)">Trump</button>
+              <button onclick="guess(4, DRIL)">Dril</button>
+            </div>
+            <div class="continue" id="4-continue-button">
+              <button onclick="nextQuestion(4)">Continue</button>
+            </div>
           </div>
         </div>
       </div>
@@ -150,9 +160,14 @@
         <div class="question-content" id="5">
           <p class="prompt">Who made this tweet?</p>
           <p class="tweet">Tweet #5</p>
-          <div class="buttons" id="5-buttons">
-            <button onclick="guess(5, TRUMP)">Trump</button>
-            <button onclick="guess(5, DRIL)">Dril</button>
+          <div class="buttons">
+            <div id="5-guess-buttons">
+              <button onclick="guess(5, TRUMP)">Trump</button>
+              <button onclick="guess(5, DRIL)">Dril</button>
+            </div>
+            <div class="continue" id="5-continue-button">
+              <button onclick="nextQuestion(5)">Continue</button>
+            </div>
           </div>
         </div>
       </div>
@@ -160,9 +175,14 @@
         <div class="question-content" id="6">
           <p class="prompt">Who made this tweet?</p>
           <p class="tweet">Tweet #6</p>
-          <div class="buttons" id="6-buttons">
-            <button onclick="guess(6, TRUMP)">Trump</button>
-            <button onclick="guess(6, DRIL)">Dril</button>
+          <div class="buttons">
+            <div id="6-guess-buttons">
+              <button onclick="guess(6, TRUMP)">Trump</button>
+              <button onclick="guess(6, DRIL)">Dril</button>
+            </div>
+            <div class="continue" id="6-continue-button">
+              <button onclick="nextQuestion(6)">Continue</button>
+            </div>
           </div>
         </div>
       </div>
@@ -170,9 +190,14 @@
         <div class="question-content" id="7">
           <p class="prompt">Who made this tweet?</p>
           <p class="tweet">Tweet #7</p>
-          <div class="buttons" id="7-buttons">
-            <button onclick="guess(7, TRUMP)">Trump</button>
-            <button onclick="guess(7, DRIL)">Dril</button>
+          <div class="buttons">
+            <div id="7-guess-buttons">
+              <button onclick="guess(7, TRUMP)">Trump</button>
+              <button onclick="guess(7, DRIL)">Dril</button>
+            </div>
+            <div class="continue" id="7-continue-button">
+              <button onclick="nextQuestion(7)">See Results</button>
+            </div>
           </div>
         </div>
       </div>
