@@ -32,24 +32,16 @@
 
         scoreTracker.textContent = "You scored " + score + "/" + ANSWERS.length + " questions correct!";
 
-        switch(score) {
-          case 0:
-            scoreMessage.textContent = "Wow... that's just impressive.";
-            break;
-          case 1:
-            scoreMessage.textContent = "Sample Text 1";
-            break;
-          case 2:
-            scoreMessage.textContent = "Sample Text 2";
-            break;
-          case 3:
-            scoreMessage.textContent = "Sample Text 3";
-            break;
-          case 21:
-            scoreMessage.textContent = "Congrats, you're a true liberal!";
-            break;
-          default:
-            scoreMessage.textContent = "Sample Text 4";
+        if (score == 0) {
+          scoreMessage.textContent = "Wow... that's just impressive.";
+        } else if (score < 11) {
+          scoreMessage.textContent = "You seem to have a tough time differentiating tweets made by a former president and a general parody account. :/";
+        } else if (score < 18) {
+          scoreMessage.textContent = "Hey, that's over 50%! How long did it take you to guess each question?";
+        } else if (score < 21) {
+          scoreMessage.textContent = "There were a few tweets that tripped you up, but all in all, you know your Trump tweets from your Dril tweets!";
+        } else {
+          scoreMessage.textContent = "Congrats, you're a true liberal! Now log off! You've been online too much.";
         }
       }
 
